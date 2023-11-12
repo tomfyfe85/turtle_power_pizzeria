@@ -56,12 +56,6 @@ def test_basket_is_updated_once_with_menu_item_2_3_times():
 """
 Given valid parameters, Order#add_to_basket adds multiple different menu items to the
 basket instance variable IE given add_to_basket(2, 1), add_to_basket(1, 2), add_to_basket(3, 3) :
-basket == [{"item_number": 2, "item": "American Hot", "price": "11.99"},
-        {"item_number": 1, "item": "Pepperoni Pizza", "price": "9.99"},
-        {"item_number": 1, "item": "Pepperoni Pizza", "price": "9.99"},
-        {"item_number": 3, "item": "Margarita", "price": "8.99"},
-        {"item_number": 3, "item": "Margarita", "price": "8.99"},
-        {"item_number": 3, "item": "Margarita", "price": "8.99"}]
 """
 
 
@@ -94,3 +88,16 @@ def test_add_to_basket_returns_confirmation_message():
     ]
 
     assert order.add_to_basket(2, 4) == "Your items have been add to the basket"
+
+
+"""
+Given a single order in the basket, Order#view_basket will return a formatted receipt of the item and the grand total
+"""
+def test_view_basket_returns_a_formatted_receipt_from_single_item():
+
+    menu = Menu()
+    order = Order(menu)
+    
+    order.add_to_basket(2, 1)
+    assert order.view_basket() == "Your order:\n\n American Hot - £11.99\n\n Grand total: £11.99\n\n Thank you!"
+
