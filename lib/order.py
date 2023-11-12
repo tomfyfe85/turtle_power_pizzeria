@@ -18,7 +18,9 @@ class Order:
     def add_to_basket(self, item_number, quantity):
         if item_number is None or quantity is None:
             raise Exception("Error: you must enter an item number and quantity")
-
+        if quantity == 0:
+            raise Exception("Error: quantity must be more than 0")
+        
         for item in self.menu:
             if item["item_number"] == item_number:
                 self.basket += quantity * [item]

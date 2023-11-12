@@ -51,8 +51,8 @@ def test_throws_error_with_no_argument():
 
 
 """
-Order#place_order will throw an error if item_number, or quantity, or 
-item_number or quantity are missing
+NEXT 4 tests - Order#add_to_basket will throw an error if item_number, quantity, or 
+item_number and quantity are missing and if quantity == 0
 """
 
 
@@ -96,3 +96,17 @@ def test_add_to_basket_throws_error_with_no_arguments_given():
         order = Order(menu)
         order.add_to_basket(None, None)
     assert str(e.value) == "Error: you must enter an item number and quantity"
+
+def test_add_to_basket_throws_error_with_if_quantity_is_0():
+    with pytest.raises(Exception) as e:
+        menu = Mock(
+            menu=[
+                {"item_number": 1, "item": "Pepperoni Pizza", "price": 9.99},
+                {"item_number": 2, "item": "American Hot", "price": 11.99},
+                {"item_number": 3, "item": "Margarita", "price": 8.99},
+            ]
+        )
+        order = Order(menu)
+        order.add_to_basket(3, 0)
+    assert str(e.value) == "Error: quantity must be more than 0"
+

@@ -99,7 +99,7 @@ assert order.view_basket(2, 2) == "Your order:\n 2) American Hot - £11.99\n 2) 
 
 
 """
-Order#place_order will throw an error if item_number and quantity is
+X - Order#place_order will throw an error if item_number and quantity is
 missing
 """
 menu = Menu()
@@ -110,7 +110,7 @@ with pytest.raises(Exception) as e:
 assert str(e.value) == "Error: you must enter an item number and quantity"
 
 """
-Order#add_to_basket will throw an error if item_number is
+X - Order#add_to_basket will throw an error if item_number is
 missing
 """
 menu = Menu()
@@ -123,7 +123,7 @@ assert str(e.value) == "Error: you must enter an item number and quantity"
 
 
 """
-Order#add_to_basket will throw an error if quantity is
+X - Order#add_to_basket will throw an error if quantity is
 missing
 """
 menu = Menu()
