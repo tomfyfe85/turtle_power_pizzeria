@@ -11,7 +11,6 @@ class Order:
     # Returns:
     #   Message confirming the order is placed
         for item in self.menu:
-            
             if item["item_number"] == item_number:
               self.basket += quantity * [item]
-              return "Your items have been add to the basket"
+        return "Your items have been add to the basket"
