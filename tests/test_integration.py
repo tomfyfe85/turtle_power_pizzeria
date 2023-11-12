@@ -19,10 +19,8 @@ def test_constructs_instance_of_menu_with_menu_prop():
 
 """
 Given valid parameters, Order#add_to_basket adds the appropriate menu items to the
-basket instance variable IE given (1, 1):
-basket == [{"item_number": 1, "item": "Pepperoni Pizza", "price": "9.99"}]
+basket instance variable:
 """
-# test this more rigorously
 
 
 def test_basket_is_updated_once_with_menu_item_1():
@@ -37,13 +35,9 @@ def test_basket_is_updated_once_with_menu_item_1():
 
 
 """
-Given valid parameters, Order#add_to_basket adds the appropriate menu items to the
-basket instance variable IE given (2, 3):
-basket == [{"item_number": 2, "item": "American Hot", "price": "11.99"},
-            {"item_number": 2, "item": "American Hot", "price": "11.99"}, 
-            {"item_number": 2, "item": "American Hot", "price": "11.99"} ]
+Given valid parameters, Order#add_to_basket adds the multiple menu items of the same item number
+to the basket instance variable
 """
-# test this more rigorously
 
 
 def test_basket_is_updated_once_with_menu_item_2_3_times():
@@ -56,6 +50,36 @@ def test_basket_is_updated_once_with_menu_item_2_3_times():
         {"item_number": 2, "item": "American Hot", "price": "11.99"},
         {"item_number": 2, "item": "American Hot", "price": "11.99"},
         {"item_number": 2, "item": "American Hot", "price": "11.99"},
+    ]
+
+
+"""
+Given valid parameters, Order#add_to_basket adds multiple different menu items to the
+basket instance variable IE given add_to_basket(2, 1), add_to_basket(1, 2), add_to_basket(3, 3) :
+basket == [{"item_number": 2, "item": "American Hot", "price": "11.99"},
+        {"item_number": 1, "item": "Pepperoni Pizza", "price": "9.99"},
+        {"item_number": 1, "item": "Pepperoni Pizza", "price": "9.99"},
+        {"item_number": 3, "item": "Margarita", "price": "8.99"},
+        {"item_number": 3, "item": "Margarita", "price": "8.99"},
+        {"item_number": 3, "item": "Margarita", "price": "8.99"}]
+"""
+
+
+def test_basket_is_updated_multiple_times_with_multiple_menu_items():
+    menu = Menu()
+    order = Order(menu)
+    order.add_to_basket(2, 1)
+    order.add_to_basket(1, 2)
+    order.add_to_basket(3, 3)
+
+
+    assert order.basket == [
+        {"item_number": 2, "item": "American Hot", "price": "11.99"},
+        {"item_number": 1, "item": "Pepperoni Pizza", "price": "9.99"},
+        {"item_number": 1, "item": "Pepperoni Pizza", "price": "9.99"},
+        {"item_number": 3, "item": "Margarita", "price": "8.99"},
+        {"item_number": 3, "item": "Margarita", "price": "8.99"},
+        {"item_number": 3, "item": "Margarita", "price": "8.99"},
     ]
 
 

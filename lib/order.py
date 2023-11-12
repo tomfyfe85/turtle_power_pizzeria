@@ -3,14 +3,15 @@
 
 class Order:
     def __init__(self, menu):
+        # note .menu prop of the menu class = [dictionaries of menu items]
         self.menu = menu.menu
         self.basket = []
 
     def add_to_basket(self, item_number, quantity ):
-    # side effects: appends selected menu items to the list 
-    # Returns:
-    #   Message confirming the order is placed
+
         for item in self.menu:
             if item["item_number"] == item_number:
               self.basket += quantity * [item]
+
+        print(self.menu)      
         return "Your items have been add to the basket"
