@@ -89,7 +89,7 @@ assert order.add_to_basket(2, 4) == "Your items have been add to your basket"
 
 
 """
-Order#view_basket will return a formatted receipt of items a with the
+X - Order#view_basket will return a formatted receipt of items a with the
 total cost calculated
 """
 menu = Menu()
@@ -174,7 +174,7 @@ a more granular level of detail._
 # Menu class
 
 """
-X The menu should be initialized as a prop
+X- The menu should be initialized as a prop
 """
 menu = Menu()
 

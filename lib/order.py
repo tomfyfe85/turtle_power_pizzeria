@@ -1,9 +1,16 @@
-# from lib.menu import Menu
+from lib.menu import Menu
 
 
 class Order:
     def __init__(self, menu):
         # note .menu prop of the menu class = [dictionaries of menu items]
+        if menu.menu != [
+            {"item_number": 1, "item": "Pepperoni Pizza", "price": 9.99},
+            {"item_number": 2, "item": "American Hot", "price": 11.99},
+            {"item_number": 3, "item": "Margarita", "price": 8.99},
+        ]:
+            raise Exception("Error: Please enter the current menu")
+
         self.menu = menu.menu
         self.basket = []
 
@@ -27,6 +34,10 @@ class Order:
 
             if counter == len(self.basket):
                 initial_string += f"\n Grand total: £{final_cost}\n\n Thank you!"
-                print(initial_string)
                 return initial_string
+                # returns a formatted itemized receipt and a grand total
 
+    # def place_order(self, phone number):
+    # confirm = Confirmation(phonenumber)
+    # self.basket = []
+    # return confirm.confirmation_text()

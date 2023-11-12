@@ -13,3 +13,4 @@ def test_the_menu_is_initialized():
         {"item_number": 2, "item": "American Hot", "price": 11.99},
         {"item_number": 3, "item": "Margarita", "price": 8.99},
     ]
+
