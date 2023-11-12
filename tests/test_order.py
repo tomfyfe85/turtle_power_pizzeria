@@ -127,3 +127,20 @@ def test_add_to_basket_throws_error_item_no_is_greater_than_no_of_items():
         order.add_to_basket(4, 1)
     assert str(e.value) == "Error: you must enter an valid item number and quantity"
 
+"""
+Order#add_to_basket will throw an error if item_number == 0
+"""
+
+def test_add_to_basket_throws_error_item_no_is_0():
+    with pytest.raises(Exception) as e:
+        menu = Mock(
+            menu=[
+                {"item_number": 1, "item": "Pepperoni Pizza", "price": 9.99},
+                {"item_number": 2, "item": "American Hot", "price": 11.99},
+                {"item_number": 3, "item": "Margarita", "price": 8.99},
+            ]
+        )
+        order = Order(menu)
+        order.add_to_basket(0, 1)
+    assert str(e.value) == "Error: you must enter an valid item number and quantity"
+
