@@ -16,16 +16,17 @@ class Order:
         self.basket = []
 
     def add_to_basket(self, item_number, quantity):
-        if item_number is None or quantity is None:
-            raise Exception("Error: you must enter an item number and quantity")
+        if item_number is None or item_number > 3 or quantity is None:
+            raise Exception("Error: you must enter an valid item number and quantity")
         if quantity == 0:
             raise Exception("Error: quantity must be more than 0")
-        
+
         for item in self.menu:
             if item["item_number"] == item_number:
                 self.basket += quantity * [item]
         return "Your items have been add to the basket"
 
+    # returns a formatted itemized receipt and a grand total
     def view_basket(self):
         initial_string = "Your order:\n\n"
         counter = 0
@@ -41,7 +42,6 @@ class Order:
             if counter == len(self.basket):
                 initial_string += f"\n Grand total: £{final_cost}\n\n Thank you!"
                 return initial_string
-                # returns a formatted itemized receipt and a grand total
 
     # def place_order(self, phone number):
     # confirm = Confirmation(phonenumber)

@@ -135,7 +135,7 @@ with pytest.raises(Exception) as e:
 assert str(e.value) == "Error: you must enter an item number and quantity"
 
 """
-Order#add_to_basket will throw an error if quantity is 0
+X - Order#add_to_basket will throw an error if quantity is 0
 """
 menu = Menu()
 order = Order(menu)
