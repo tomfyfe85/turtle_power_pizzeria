@@ -67,7 +67,7 @@ combinations that reflect the ways in which the system will be used._
 # Order class
 
 """
-An instance of menu is initialized with and the prop can be accessed
+X- An instance of menu is initialized with and the prop can be accessed
 """
 menu = Menu()
 order = Order(menu)
@@ -76,6 +76,26 @@ assert order.menu == == [{"item_number": 1, "item": "Pepperoni Pizza", "price":"
 }, {"item_number": 2, "item": "American Hot", "price":"11.99"
 }, {"item_number": 3, "item": "Margarita", "price":"8.99"
 }]
+
+
+"""
+X - Order#add_to_basket will return a nice message confirming the order has been placed
+"""
+
+menu = Menu()
+order = Order(menu)
+
+assert order.add_to_basket(2, 4) == "Your items have been add to your basket"
+
+
+"""
+Order#view_basket will return a formatted receipt of items a with the
+total cost calculated
+"""
+menu = Menu()
+order = Order(menu)
+
+assert order.view_basket(2, 2) == "Your order:\n 2) American Hot - £11.99\n 2) American Hot - £11.99\nGrand total: £23.98"
 
 
 """
@@ -125,24 +145,6 @@ with pytest.raises(Exception) as e:
 
 assert str(e.value) == "Error: You must enter a quantity of 1 or more"
 
-"""
-Order#add_to_basket will return a nice message confirming the order has been placed
-"""
-
-menu = Menu()
-order = Order(menu)
-
-assert order.add_to_basket(2, 4) == "Your items have been add to your basket"
-
-
-"""
-Order#view_basket will return a formatted receipt of items a with the
-total cost calculated
-"""
-menu = Menu()
-order = Order(menu)
-
-assert order.view_basket(2, 2) == "Your order:\n 2) American Hot - £11.99\n 2) American Hot - £11.99\nGrand total: £23.98"
 
 # Confirmation class
 
@@ -170,7 +172,7 @@ a more granular level of detail._
 # Menu class
 
 """
-The menu should be initialized as a prop
+X The menu should be initialized as a prop
 """
 menu = Menu()
 

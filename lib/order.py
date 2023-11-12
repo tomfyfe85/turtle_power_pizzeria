@@ -3,9 +3,10 @@
 
 class Order:
     def __init__(self, menu):
-        # Parameters:
-        # menu - an instance of the Menu class
-        # Side-effects:
-        # Sets menu properties
-        # Initializes a list to store chosen menu items
         self.menu = menu.menu
+
+    def add_to_basket(self, item_number, quantity ):
+    # side effects: appends selected menu items to the list 
+    # Returns:
+    #   Message confirming the order is placed
+        return "Your items have been add to the basket"
