@@ -4,7 +4,8 @@ from lib.menu import Menu
 class Order:
     def __init__(self, menu):
         # note .menu prop of the menu class = [dictionaries of menu items]
-        if menu.menu != [
+        # testing if an argument and the correct menu have been given.
+        if menu is None or menu.menu != [
             {"item_number": 1, "item": "Pepperoni Pizza", "price": 9.99},
             {"item_number": 2, "item": "American Hot", "price": 11.99},
             {"item_number": 3, "item": "Margarita", "price": 8.99},

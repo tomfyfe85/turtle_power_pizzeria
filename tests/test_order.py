@@ -37,3 +37,12 @@ def test_raises_error_the_wrong_menu_is_constructed():
         order = Order(wrong_menu)
     err_msg = str(e.value)
     assert err_msg == "Error: Please enter the current menu"
+
+"""
+Order will throw error with no argument
+"""
+def test_throws_error_with_no_argument():
+    with pytest.raises(Exception) as excinfo:
+        order = Order(None)
+    assert str(excinfo.value) == "Error: Please enter the current menu"
+
