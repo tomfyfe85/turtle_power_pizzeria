@@ -185,7 +185,7 @@ assert menu.menu == [{"item_number": 1, "item": "Pepperoni Pizza", "price":"9.99
 
 
 """
-Given a menu is initialized, Menu#view should return a formatted version
+X - Given a menu is initialized, Menu#view should return a formatted version
 Of the menu which is nice to read
 """
 menu = Menu()
