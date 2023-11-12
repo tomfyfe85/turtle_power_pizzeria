@@ -3,18 +3,19 @@ from lib.order import Order
 import pytest
 
 
-
 """
 Order#add_to_basket will return a nice message confirming the order has been placed
 """
 
 
 def test_add_to_basket_returns_confirmation_message():
-    menu = Mock(menu = [
-    {"item_number": 1, "item": "Pepperoni Pizza", "price": 9.99},
-    {"item_number": 2, "item": "American Hot", "price": 11.99},
-    {"item_number": 3, "item": "Margarita", "price": 8.99},
-])
+    menu = Mock(
+        menu=[
+            {"item_number": 1, "item": "Pepperoni Pizza", "price": 9.99},
+            {"item_number": 2, "item": "American Hot", "price": 11.99},
+            {"item_number": 3, "item": "Margarita", "price": 8.99},
+        ]
+    )
     order = Order(menu)
     assert order.add_to_basket(2, 4) == "Your items have been add to the basket"
 
@@ -57,11 +58,27 @@ missing
 
 def test_place_order_throws_error_with_no_item_number():
     with pytest.raises(Exception) as e:
-        menu = Mock(menu = [
-    {"item_number": 1, "item": "Pepperoni Pizza", "price": 9.99},
-    {"item_number": 2, "item": "American Hot", "price": 11.99},
-    {"item_number": 3, "item": "Margarita", "price": 8.99},
-])
+        menu = Mock(
+            menu=[
+                {"item_number": 1, "item": "Pepperoni Pizza", "price": 9.99},
+                {"item_number": 2, "item": "American Hot", "price": 11.99},
+                {"item_number": 3, "item": "Margarita", "price": 8.99},
+            ]
+        )
         order = Order(menu)
         order.add_to_basket(None, 1)
+    assert str(e.value) == "Error: you must enter an item number and quantity"
+
+
+def test_place_order_throws_error_with_no_quantity():
+    with pytest.raises(Exception) as e:
+        menu = Mock(
+            menu=[
+                {"item_number": 1, "item": "Pepperoni Pizza", "price": 9.99},
+                {"item_number": 2, "item": "American Hot", "price": 11.99},
+                {"item_number": 3, "item": "Margarita", "price": 8.99},
+            ]
+        )
+        order = Order(menu)
+        order.add_to_basket(2, None)
     assert str(e.value) == "Error: you must enter an item number and quantity"
