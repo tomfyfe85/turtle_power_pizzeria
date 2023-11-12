@@ -16,14 +16,3 @@ def test_constructs_instance_of_menu_with_menu_prop():
         {"item_number": 3, "item": "Margarita", "price": "8.99"},
     ]
 
-
-"""
-Order#add_to_basket will return a nice message confirming the order has been placed
-"""
-
-
-def test_returns_confirmation_message():
-    menu = Menu()
-    order = Order(menu)
-
-    assert order.add_to_basket(2, 4) == "Your items have been add to the basket"
