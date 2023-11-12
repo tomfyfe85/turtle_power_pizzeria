@@ -195,7 +195,7 @@ assert menu.view() == "Welcome to Tom's rad pizzeria!\n Menu:\n 1) Pepperoni - Â
 # Order class
 
 """
-Order will throw error with no argument
+X - Order will throw error with no argument
 """
  
     with pytest.raises(Exception) as excinfo:
