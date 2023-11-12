@@ -14,8 +14,19 @@ class Order:
         return "Your items have been add to the basket"
 
     def view_basket(self):
-        item = self.basket[0]
-        result = f"Your order:\n\n {item['item']} - £{item['price']}\n\n Grand total: £{item['price']}\n\n Thank you!"
-        print(item)
-        print(result)
-        return result  # returns an itemized list, formatted list of menu items and calculates the grand total
+        initial_string = "Your order:\n\n"
+        counter = 0
+        final_cost = 0
+
+        for item in self.basket:
+            new_item = f" {item['item']} - £{item['price']}\n"
+
+            initial_string += new_item
+            final_cost += item["price"]
+            counter += 1
+
+            if counter == len(self.basket):
+                initial_string += f"\n Grand total: £{final_cost}\n\n Thank you!"
+                print(initial_string)
+                return initial_string
+
