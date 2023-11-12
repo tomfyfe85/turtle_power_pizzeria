@@ -1,5 +1,6 @@
 # from lib.menu import Menu
 
+
 class Order:
     def __init__(self, menu):
         # Parameters:
@@ -7,4 +8,4 @@ class Order:
         # Side-effects:
         # Sets menu properties
         # Initializes a list to store chosen menu items
-        pass 
+        self.menu = menu.menu
