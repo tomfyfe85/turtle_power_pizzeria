@@ -1,0 +1,24 @@
+twilio-
+twilio was installed with brew
+
+
+- update diagram with phone_number_validator class 
+- ensure twilio auth etc is safe to commit to git
+write mock test for Connection class
+#confirm with added time module
+
+test phone_number_validator
+throw error if phone number is invalid
+
+test order 
+mocks
+confirm_order sets basket to []
+
+test_intergration
+#confirm_order
+confirms sent text
+confirms valid phone number
+sets basket to []
+
+
+
