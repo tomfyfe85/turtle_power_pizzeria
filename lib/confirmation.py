@@ -22,10 +22,6 @@ class Confirmation:
 
     def confirm_message(self):
         message = client.messages.create(
-            from_=twilio_number, body="test 9", to=self._number
+            from_=twilio_number, body="Thank you for your order!", to=self._number
         )
-        print(message.sid)
         return message.sid
-
-
-# print(confirm_message(+447901745681))
