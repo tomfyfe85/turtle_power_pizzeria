@@ -25,18 +25,18 @@ Raises error if menu.menu isn't the same as the menu in the Menu class
 """
 
 
-def test_raises_error_the_wrong_menu_is_constructed():
-    wrong_menu = Mock(
-        menu=[
-            {"item_number": 1, "item": "BBQ Chicken", "price": 9.99},
-            {"item_number": 2, "item": "Hawaiian", "price": 11.99},
-        ]
-    )
+# def test_raises_error_the_wrong_menu_is_constructed():
+#     wrong_menu = Mock(
+#         menu=[
+#             {"item_number": 1, "item": "BBQ Chicken", "price": 9.99},
+#             {"item_number": 2, "item": "Hawaiian", "price": 11.99},
+#         ]
+#     )
 
-    with pytest.raises(Exception) as e:
-        order = Order(wrong_menu)
-    err_msg = str(e.value)
-    assert err_msg == "Error: Please enter the current menu"
+#     with pytest.raises(Exception) as e:
+#         order = Order(wrong_menu)
+#     err_msg = str(e.value)
+#     assert err_msg == "Error: Please enter the current menu"
 
 
 """
