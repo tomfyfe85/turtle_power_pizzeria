@@ -26,7 +26,7 @@ class Order:
     def view_basket(self):
         initial_string = "Your order:\n\n"
         counter = 0
-        final_cost = 0
+        final_cost = 0 
 
         for item in self.basket:
             new_item = f" {item['item']} - £{item['price']}\n"

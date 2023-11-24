@@ -20,5 +20,35 @@ confirms sent text
 confirms valid phone number
 sets basket to []
 
+Kay's notes:
+
+More classes:
+each class has a single responsibility:
+
+order.py
+Order class can be be the God class;
+import all classes into Order.
+export add_to_basket and view_basket out and
+create a new basket class.
+(Order could be renamed restaurant?)
+
+menu.py
+should just have the menu,
+create and add function to add items to the menu
+
+#to create
+formatter , 
+a class that any class can use to handle formatting
+of it's return data
+use __repr__ method?
+
+basket
+basket functionality from the order class
+
+phone_number_validator
+confirms a valid uk phone number
+
+
+
 
 
