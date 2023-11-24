@@ -37,7 +37,7 @@ should just have the menu,
 create and add function to add items to the menu
 
 #to create
-formatter , 
+viewer
 a class that any class can use to handle formatting
 of it's return data
 use __repr__ method?
@@ -47,6 +47,30 @@ basket functionality from the order class
 
 phone_number_validator
 confirms a valid uk phone number
+
+spit up test_intergration.py contents to 
+seperate test files per class, which include
+integration test and unit tests. 
+
+- Begin with viwer class
+#view 
+view list of instances converted to text with 
+__repr__ function (do some research into this)
+
+#View_current
+returns welcome message with current menu
+
+#view_basket
+puts basket data into readable text
+
+#view_checkout
+puts checkout data into readable text
+
+-menu
+#add 
+add menu items
+#remove menu items
+
 
 
 
