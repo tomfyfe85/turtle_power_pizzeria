@@ -8,3 +8,4 @@
 
 # will need to alter existing tests
 class Viewer():
+    pass
